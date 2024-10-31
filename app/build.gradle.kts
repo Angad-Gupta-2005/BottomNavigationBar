@@ -53,5 +53,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
 //    Animated bottom navigation bar dependency
-    implementation("nl.joery.animatedbottombar:library:1.1.0")
+    implementation(libs.library)
+
+//    Motion toast dependency
+    implementation("com.github.Spikeysanju:MotionToast:1.4")
 }
