@@ -56,5 +56,8 @@ dependencies {
     implementation(libs.library)
 
 //    Motion toast dependency
-    implementation("com.github.Spikeysanju:MotionToast:1.4")
+    implementation(libs.motiontoast)
+
+//    Android animation dependency
+    implementation(libs.android.animations.kotlin)
 }

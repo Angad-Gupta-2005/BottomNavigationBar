@@ -7,6 +7,9 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.angad.bottomnavigationbar.databinding.ActivityMainBinding
+import render.animations.Attention
+import render.animations.Bounce
+import render.animations.Render
 import www.sanju.motiontoast.MotionToast
 import www.sanju.motiontoast.MotionToastStyle
 
@@ -45,16 +48,29 @@ class MainActivity : AppCompatActivity() {
 //        }
 //    }
 
+//    private fun onClickAlarmMenu() {
+//        binding.button.setOnClickListener {
+//            //    Dark toast
+//            MotionToast.darkToast(this,"Upload Completed! \uD83D\uDE0D",
+//                "Upload Completed successfully!",
+//                MotionToastStyle.SUCCESS,
+//                MotionToast.GRAVITY_BOTTOM,
+//                MotionToast.LONG_DURATION,
+//                ResourcesCompat.getFont(this, www.sanju.motiontoast.R.font.helveticabold))
+//
+//        }
+//    }
+
+
+//    Android Animation
     private fun onClickAlarmMenu() {
         binding.button.setOnClickListener {
-            //    Dark toast
-            MotionToast.darkToast(this,"Upload Completed! \uD83D\uDE0D",
-                "Upload Completed successfully!",
-                MotionToastStyle.SUCCESS,
-                MotionToast.GRAVITY_BOTTOM,
-                MotionToast.LONG_DURATION,
-                ResourcesCompat.getFont(this, www.sanju.motiontoast.R.font.helveticabold))
+        // Create Render Class
+            val render = Render(this)
 
+        // Set Animation
+            render.setAnimation(Attention().Shake(binding.button))
+            render.start()
 
         }
     }

@@ -4,4 +4,5 @@
     <string name="alarm">Alarm</string>
     <string name="bread">Bread</string>
     <string name="cart">Cart</string>
+    <string name="motion_toast">Motion Toast</string>
 </resources>
