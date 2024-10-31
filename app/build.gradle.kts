@@ -60,4 +60,7 @@ dependencies {
 
 //    Android animation dependency
     implementation(libs.android.animations.kotlin)
+
+//    Time range picker dependency
+    implementation("nl.joery.timerangepicker:timerangepicker:1.0.0")
 }

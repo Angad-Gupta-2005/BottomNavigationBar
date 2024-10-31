@@ -1,12 +1,14 @@
 package com.angad.bottomnavigationbar
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.angad.bottomnavigationbar.databinding.ActivityMainBinding
+import nl.joery.timerangepicker.TimeRangePicker
 import render.animations.Attention
 import render.animations.Bounce
 import render.animations.Render
@@ -33,6 +35,22 @@ class MainActivity : AppCompatActivity() {
 
 //        On click alarm menu of bottom
         onClickAlarmMenu()
+
+//        Time range picker
+        binding.picker.setOnTimeChangeListener(object : TimeRangePicker.OnTimeChangeListener {
+            override fun onStartTimeChange(startTime: TimeRangePicker.Time) {
+                Log.d("TimeRangePicker", "Start time: $startTime")
+            }
+
+            override fun onEndTimeChange(endTime: TimeRangePicker.Time) {
+                Log.d("TimeRangePicker", "End time: " + endTime.hour)
+            }
+
+            override fun onDurationChange(duration: TimeRangePicker.TimeDuration) {
+                Log.d("TimeRangePicker", "Duration: " + duration.hour)
+            }
+        })
+
     }
 
 //    private fun onClickAlarmMenu() {
@@ -74,4 +92,5 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
 }
